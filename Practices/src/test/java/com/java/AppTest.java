@@ -14,10 +14,17 @@ public class AppTest
      * Rigorous Test :-)
      */
     @Test
-    public void shouldAnswerWithTrue()
-    {
-
-        String cash = "洗发水";
-        assertEquals("20 元",new CashTest().getCash(cash));
+    public void getChash(){
+        String goods = "洗发水-N";
+        assertEquals("20 元",new CashTest().getCash(goods));
     }
+
+    @Test
+    public void isBargain(){
+        String goods = "沐浴露-A";
+        String goods2 = "牙膏-B";
+        assertEquals(false,new CashTest().isBargain(goods));
+        assertEquals(true,new CashTest().isBargain(goods2));
+    }
+
 }
